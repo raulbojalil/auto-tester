@@ -125,6 +125,8 @@
 //await page.TypeAsync("#password", "Test password");
 //await page.WaitForSelectorAsync("div.main-content");
 //await page.WaitForTimeoutAsync(2000);
+//Or use one of the included extensions
+//await page.FindByInnerText("a", "Test link", "Another link");
 
 </value>
   </data>

@@ -65,6 +65,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using AutoTester.Extensions;
 
 class CScript {{
     public async Task<string> Execute(Page page) {{
