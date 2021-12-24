@@ -123,6 +123,9 @@
 //await page.GoToAsync("https://mywebsite.com");
 //await page.ClickAsync("#login-button");
 //await page.TypeAsync("#password", "Test password");
+//await page.WaitForSelectorAsync("div.main-content");
+//await page.WaitForTimeoutAsync(2000);
+
 </value>
   </data>
 </root>

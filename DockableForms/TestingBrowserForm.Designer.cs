@@ -32,7 +32,6 @@ namespace AutoTester.DockableForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestingBrowserForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.scintilla1 = new ScintillaNET.Scintilla();
-            this.btnRun = new System.Windows.Forms.Button();
             this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -49,7 +48,6 @@ namespace AutoTester.DockableForms
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.scintilla1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnRun);
             // 
             // splitContainer1.Panel2
             // 
@@ -65,21 +63,9 @@ namespace AutoTester.DockableForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.scintilla1.Location = new System.Drawing.Point(3, 4);
             this.scintilla1.Name = "scintilla1";
-            this.scintilla1.Size = new System.Drawing.Size(445, 666);
+            this.scintilla1.Size = new System.Drawing.Size(445, 703);
             this.scintilla1.TabIndex = 0;
             this.scintilla1.Text = resources.GetString("scintilla1.Text");
-            // 
-            // btnRun
-            // 
-            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRun.Location = new System.Drawing.Point(3, 675);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(445, 32);
-            this.btnRun.TabIndex = 1;
-            this.btnRun.Text = "RUN";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // chromiumWebBrowser1
             // 
@@ -113,7 +99,6 @@ namespace AutoTester.DockableForms
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private ScintillaNET.Scintilla scintilla1;
-        private System.Windows.Forms.Button btnRun;
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
     }
 }

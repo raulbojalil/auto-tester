@@ -38,9 +38,6 @@ namespace AutoTester
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,13 +48,12 @@ namespace AutoTester
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -65,10 +61,15 @@ namespace AutoTester
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.spbRun = new System.Windows.Forms.ToolStripSplitButton();
+            this.runActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.runActiveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -94,9 +95,6 @@ namespace AutoTester
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
-            this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -109,7 +107,7 @@ namespace AutoTester
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.newToolStripMenuItem.Text = "&NewTest";
+            this.newToolStripMenuItem.Text = "&New Test";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
@@ -149,33 +147,12 @@ namespace AutoTester
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(179, 6);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -249,6 +226,22 @@ namespace AutoTester
             this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
+            // testsToolStripMenuItem
+            // 
+            this.testsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runAllToolStripMenuItem,
+            this.runActiveToolStripMenuItem1});
+            this.testsToolStripMenuItem.Name = "testsToolStripMenuItem";
+            this.testsToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.testsToolStripMenuItem.Text = "Test";
+            // 
+            // runAllToolStripMenuItem
+            // 
+            this.runAllToolStripMenuItem.Name = "runAllToolStripMenuItem";
+            this.runAllToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.runAllToolStripMenuItem.Text = "Run All";
+            this.runAllToolStripMenuItem.Click += new System.EventHandler(this.runAllToolStripMenuItem_Click);
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -273,32 +266,12 @@ namespace AutoTester
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contentsToolStripMenuItem,
-            this.indexToolStripMenuItem,
-            this.searchToolStripMenuItem,
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem,
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // contentsToolStripMenuItem
-            // 
-            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.contentsToolStripMenuItem.Text = "&Contents";
-            // 
-            // indexToolStripMenuItem
-            // 
-            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.indexToolStripMenuItem.Text = "&Index";
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
@@ -351,26 +324,63 @@ namespace AutoTester
             this.dockPanel1.TabIndex = 4;
             this.dockPanel1.ContentRemoved += new System.EventHandler<WeifenLuo.WinFormsUI.Docking.DockContentEventArgs>(this.dockPanel1_ContentRemoved);
             // 
-            // testsToolStripMenuItem
+            // toolStrip1
             // 
-            this.testsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runAllToolStripMenuItem});
-            this.testsToolStripMenuItem.Name = "testsToolStripMenuItem";
-            this.testsToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.testsToolStripMenuItem.Text = "Test";
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.spbRun});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1111, 25);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // runAllToolStripMenuItem
+            // spbRun
             // 
-            this.runAllToolStripMenuItem.Name = "runAllToolStripMenuItem";
-            this.runAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.runAllToolStripMenuItem.Text = "Run All";
-            this.runAllToolStripMenuItem.Click += new System.EventHandler(this.runAllToolStripMenuItem_Click);
+            this.spbRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.spbRun.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runActiveToolStripMenuItem,
+            this.runAllToolStripMenuItem1});
+            this.spbRun.Image = ((System.Drawing.Image)(resources.GetObject("spbRun.Image")));
+            this.spbRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.spbRun.Name = "spbRun";
+            this.spbRun.Size = new System.Drawing.Size(32, 22);
+            this.spbRun.Text = "toolStripSplitButton1";
+            this.spbRun.ButtonClick += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
+            // 
+            // runActiveToolStripMenuItem
+            // 
+            this.runActiveToolStripMenuItem.Name = "runActiveToolStripMenuItem";
+            this.runActiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runActiveToolStripMenuItem.Text = "Run active";
+            this.runActiveToolStripMenuItem.Click += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
+            // 
+            // runAllToolStripMenuItem1
+            // 
+            this.runAllToolStripMenuItem1.Name = "runAllToolStripMenuItem1";
+            this.runAllToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runAllToolStripMenuItem1.Text = "Run all";
+            this.runAllToolStripMenuItem1.Click += new System.EventHandler(this.runAllToolStripMenuItem_Click);
+            // 
+            // runActiveToolStripMenuItem1
+            // 
+            this.runActiveToolStripMenuItem1.Name = "runActiveToolStripMenuItem1";
+            this.runActiveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runActiveToolStripMenuItem1.Text = "Run Active";
+            this.runActiveToolStripMenuItem1.Click += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
+            // 
+            // puppeteerSharpAPIDocumentationToolStripMenuItem
+            // 
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Name = "puppeteerSharpAPIDocumentationToolStripMenuItem";
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Text = "PuppeteerSharp API Documentation";
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Click += new System.EventHandler(this.puppeteerSharpAPIDocumentationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 597);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -383,6 +393,8 @@ namespace AutoTester
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,9 +410,6 @@ namespace AutoTester
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
@@ -415,9 +424,6 @@ namespace AutoTester
         private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -427,6 +433,12 @@ namespace AutoTester
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel1;
         private System.Windows.Forms.ToolStripMenuItem testsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripSplitButton spbRun;
+        private System.Windows.Forms.ToolStripMenuItem runActiveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runAllToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem runActiveToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem puppeteerSharpAPIDocumentationToolStripMenuItem;
     }
 }
 
