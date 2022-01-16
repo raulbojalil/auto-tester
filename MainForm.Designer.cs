@@ -50,10 +50,12 @@ namespace AutoTester
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runActiveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -65,8 +67,6 @@ namespace AutoTester
             this.spbRun = new System.Windows.Forms.ToolStripSplitButton();
             this.runActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.runActiveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.puppeteerSharpAPIDocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -172,29 +172,26 @@ namespace AutoTester
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -202,8 +199,7 @@ namespace AutoTester
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -211,19 +207,18 @@ namespace AutoTester
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // testsToolStripMenuItem
@@ -238,9 +233,16 @@ namespace AutoTester
             // runAllToolStripMenuItem
             // 
             this.runAllToolStripMenuItem.Name = "runAllToolStripMenuItem";
-            this.runAllToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.runAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.runAllToolStripMenuItem.Text = "Run All";
             this.runAllToolStripMenuItem.Click += new System.EventHandler(this.runAllToolStripMenuItem_Click);
+            // 
+            // runActiveToolStripMenuItem1
+            // 
+            this.runActiveToolStripMenuItem1.Name = "runActiveToolStripMenuItem1";
+            this.runActiveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runActiveToolStripMenuItem1.Text = "Run Active";
+            this.runActiveToolStripMenuItem1.Click += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -254,13 +256,13 @@ namespace AutoTester
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
@@ -273,15 +275,22 @@ namespace AutoTester
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
+            // puppeteerSharpAPIDocumentationToolStripMenuItem
+            // 
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Name = "puppeteerSharpAPIDocumentationToolStripMenuItem";
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Text = "PuppeteerSharp API Documentation";
+            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Click += new System.EventHandler(this.puppeteerSharpAPIDocumentationToolStripMenuItem_Click);
+            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(262, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // statusStrip1
@@ -350,30 +359,16 @@ namespace AutoTester
             // runActiveToolStripMenuItem
             // 
             this.runActiveToolStripMenuItem.Name = "runActiveToolStripMenuItem";
-            this.runActiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runActiveToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.runActiveToolStripMenuItem.Text = "Run active";
             this.runActiveToolStripMenuItem.Click += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
             // 
             // runAllToolStripMenuItem1
             // 
             this.runAllToolStripMenuItem1.Name = "runAllToolStripMenuItem1";
-            this.runAllToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.runAllToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.runAllToolStripMenuItem1.Text = "Run all";
             this.runAllToolStripMenuItem1.Click += new System.EventHandler(this.runAllToolStripMenuItem_Click);
-            // 
-            // runActiveToolStripMenuItem1
-            // 
-            this.runActiveToolStripMenuItem1.Name = "runActiveToolStripMenuItem1";
-            this.runActiveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.runActiveToolStripMenuItem1.Text = "Run Active";
-            this.runActiveToolStripMenuItem1.Click += new System.EventHandler(this.runActiveToolStripMenuItem_Click);
-            // 
-            // puppeteerSharpAPIDocumentationToolStripMenuItem
-            // 
-            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Name = "puppeteerSharpAPIDocumentationToolStripMenuItem";
-            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Text = "PuppeteerSharp API Documentation";
-            this.puppeteerSharpAPIDocumentationToolStripMenuItem.Click += new System.EventHandler(this.puppeteerSharpAPIDocumentationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
